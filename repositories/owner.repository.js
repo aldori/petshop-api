@@ -7,7 +7,7 @@ async function getOwners() {
     const sql = `
       SELECT * FROM proprietarios;
     `;
-    const values = [id];
+    const values = [];
     const res = await conn.query(sql, values);
     return res.rows;
   } catch (error) {
@@ -60,7 +60,7 @@ async function deleteOwner(id) {
     `;
     const values = [id];
     await conn.query(sql, values);
-    return res.rows[0];
+    return [];
   } catch (error) {
     throw error;
   } finally {

@@ -5,10 +5,10 @@ const router = express.Router();
 
 router.post("/", AnimalController.createAnimal);
 router.get("/", AnimalController.getAnimals);
+router.get("/owner/:id", AnimalController.getAnimalsOwner);
 router.get("/:id", AnimalController.getAnimal);
 router.delete("/:id", AnimalController.deleteAnimal);
 router.put("/", AnimalController.updateAnimal);
-router.get("/owner/:id", AnimalController.getAnimalsOwner);
 
 router.use((err, req, res, next) => {
     logger.error(`${req.method} ${req.baseUrl} - ${err.message}`);    

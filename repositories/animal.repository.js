@@ -7,7 +7,7 @@ async function getAnimals() {
     const sql = `
       SELECT * FROM animais;
     `;
-    const values = [id];
+    const values = [];
     const res = await conn.query(sql, values);
     return res.rows;
   } catch (error) {
@@ -60,7 +60,7 @@ async function deleteAnimal(id) {
     `;
     const values = [id];
     await conn.query(sql, values);
-    return res.rows[0];
+    return [];
   } catch (error) {
     throw error;
   } finally {
